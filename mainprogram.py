@@ -25,7 +25,7 @@ for num_tik_row in range(len(listingfin)):
 
 ###opening csv file for each OIK
 for num_tik_row in range(len(listingfin)):
-    filecsv=open("/zakso_fptp/zakso_fptp_tab"+str(num_tik_row+1)+".csv", "w", coding="utf-8")
+    filecsv=open("/zakso_fptp/zakso_fptp_tab"+str(num_tik_row+1)+".csv", encoding="utf-8", mode="w")
 
 #writing variable names for each csv file
     for vlength in range(18):
@@ -45,7 +45,7 @@ for num_tik_row in range(len(listingfin)):
 
 #writing each codebook in a separate file
 for n in range(len(codebooklist)):
-    file=open("/zakso_fptp/zakso_fptp_codebook"+str(n+1)+'.txt', "w", coding="utf-8")
+    file=open("/zakso_fptp/zakso_fptp_codebook"+str(n+1)+'.txt', encoding="utf-8", mode="w")
     for p in range(18):
         file.write('v'+str(p+1)+'-' + codebooklist[n][p]+'\n')
     for p in range(18, len(codebooklist[n])):
