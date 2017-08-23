@@ -7,11 +7,11 @@ end=pageforcrawling.text.find('</select>')
 workingpage=pageforcrawling.text[start:end]
 listing=workingpage.split('</option>')
 listing=listing[1:27]
-for i in range(0, len(listing)):
-    listing[i]=listing[i].lstrip('<option value="')
-    listing[i].find('"')
-    listing[i]=listing[i] [0:(listing[i].find('"'))]
-    listing[i]=listing[i].replace('amp;', '')
+for item in listing:
+    item=item.lstrip('<option value="')
+    item.find('"')
+    item=item [0:(item.find('"'))]
+    item=item.replace('amp;', '')
 
 listingfin=[]
 for k in range (len(listing)-1):
