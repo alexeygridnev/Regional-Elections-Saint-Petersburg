@@ -62,7 +62,7 @@ def reqdata(url):
         string=string+'\n'
         print(string)
         datastring=string
-        return(datastring) ##returns a string!
+        return datastring ##returns a string!
     except Exception:
         pass
 
@@ -74,11 +74,11 @@ def gettik(area):
     workingpage=pageforcrawling.text[start:end]
     listingtik=workingpage.split('</option>')
     listingtik=listingtik[1:len(listingtik)]
-    for i in range(len(listingtik)):
-        listingtik[i]=listingtik[i].lstrip('<option value="')
-        listingtik[i]=listingtik[i] [0:(listingtik[i].find('">'))]
-        listingtik[i]=listingtik[i].replace('amp;', '')
-    return(listingtik)
+    for item in listingtik:
+        item=item.lstrip('<option value="')
+        item=item [0:(item.find('">'))]
+        item=item.replace('amp;', '')
+    return listingtik
 
 #getting to the results page of UIK from the raw data
 def getpageuik(pageuikraw):
@@ -93,7 +93,7 @@ def getpageuik(pageuikraw):
     tuplemin=pageuikraw.partition('vibid')
     pageuikraw=tuplemin[0]+'type=423&'+tuplemin[1]+tuplemin[2]
     pageuik=pageuikraw
-    return(pageuik)
+    return pageuik
 
 #getting UIK addresses from TIK page
 def getlistuik(pagetik):
